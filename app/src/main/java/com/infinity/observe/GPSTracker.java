@@ -1,4 +1,4 @@
-package com.example.bradleyhekman.observe;
+package com.infinity.observe;
 
 // Credit: http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
 

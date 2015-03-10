@@ -4,11 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/branding"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="15"
+        android:background="#ff00ac13"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Observe"
+        android:textColor="#ffffffff"
+        android:textSize="36dp" />
+
     <EditText
         android:id="@+id/mFeedbackEditText"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="0px"
+        android:layout_weight="60"
+        android:background="@null"
         android:ems="10"
         android:gravity="left|top"
         android:hint="@string/prompt_feedback"
@@ -18,10 +30,12 @@
     <Button
         android:id="@+id/mFeedbackSubmitButton"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="4"
+        android:layout_height="0px"
+        android:layout_weight="25"
         android:background="#ff00ac13"
+        android:gravity="center_vertical|center_horizontal"
         android:text="Submit Feedback"
-        android:textSize="24dp" />
+        android:textColor="#ffffffff"
+        android:textSize="36dp"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.bradleyhekman.observe;
+package com.infinity.observe;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -75,12 +75,10 @@ public class CreateFeedbackActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_feedback);
 
-        //cd = new ConnectionDetector(getApplicationContext());
+        // Prep GPS
         gps = new GPSTracker(this);
-        if (!gps.canGetLocation()) {
-            gps.showSettingsAlert();
-        }
 
+        // Prep Parse
         user = ParseUser.getCurrentUser();
         if (user != null) {
             Lazy.dlog(LOGTAG, "User is logged in as " + user.getUsername());
@@ -89,6 +87,7 @@ public class CreateFeedbackActivity extends Activity {
             finish();
         }
 
+        // Prep layout references
         mFeedbackEditText = (EditText) findViewById(R.id.mFeedbackEditText);
         mFeedbackSubmitButton = (Button) findViewById(R.id.mFeedbackSubmitButton);
         mFeedbackSubmitButton.setOnClickListener(new View.OnClickListener() {

@@ -1,4 +1,4 @@
-package com.example.bradleyhekman.observe;
+package com.infinity.observe;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -28,38 +28,41 @@ import java.util.Locale;
  */
 public class LoginActivity extends Activity {
     private static final String LOGTAG = "LoginActivity";
-
+    ConnectionDetector cd;
     // UI references.
     private AutoCompleteTextView mUserNameEditText;
     private EditText mPasswordEditText;
-
-    ConnectionDetector cd;
 
     @Override
     protected void onRestart() {
         Lazy.ilog(LOGTAG, "login restarted");
         super.onRestart();
     }
+
     @Override
     protected void onStart() {
         Lazy.ilog(LOGTAG, "login started");
         super.onStart();
     }
+
     @Override
-     protected void onResume() {
+    protected void onResume() {
         Lazy.ilog(LOGTAG, "login resumed");
         super.onResume();
     }
+
     @Override
     protected void onPause() {
         Lazy.ilog(LOGTAG, "login paused");
         super.onPause();
     }
+
     @Override
     protected void onStop() {
         Lazy.ilog(LOGTAG, "login stopped");
         super.onStop();
     }
+
     @Override
     protected void onDestroy() {
         Lazy.ilog(LOGTAG, "login destroyed");
@@ -211,6 +214,7 @@ public class LoginActivity extends Activity {
         Intent in = new Intent(this, CreateFeedbackActivity.class);
         startActivity(in);
     }
+
     protected void loginUnSuccessful() {
         Toast.makeText(getApplicationContext(), "FAILURE", Toast.LENGTH_SHORT).show();
     }
@@ -219,12 +223,13 @@ public class LoginActivity extends Activity {
         //TODO: Replace this with your own logic
         return email.contains("@");
     }
+
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
     }
 
-    private void clearErrors(){
+    private void clearErrors() {
         mUserNameEditText.setError(null);
         mPasswordEditText.setError(null);
     }

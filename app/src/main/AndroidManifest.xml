@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bradleyhekman.observe">
+    package="com.infinity.observe">
 
     <!-- For location polling -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -22,7 +22,7 @@
         >
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.infinity.observe.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,13 +31,13 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name="com.infinity.observe.LoginActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustPan|stateVisible">
         </activity>
 
         <activity
-            android:name=".CreateFeedbackActivity"
+            android:name="com.infinity.observe.CreateFeedbackActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize|stateAlwaysVisible">
         </activity>
