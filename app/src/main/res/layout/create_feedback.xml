@@ -9,7 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0px"
         android:layout_weight="15"
-        android:background="#ff00ac13"
+        android:background="#2ECC71"
         android:gravity="center_vertical|center_horizontal"
         android:text="Observe"
         android:textColor="#ffffffff"
@@ -25,6 +25,7 @@
         android:gravity="left|top"
         android:hint="@string/prompt_feedback"
         android:inputType="textMultiLine"
+        android:padding="10dp"
         android:textSize="24dp" />
 
     <Button
@@ -32,7 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0px"
         android:layout_weight="25"
-        android:background="#ff00ac13"
+        android:background="#2ECC71"
         android:gravity="center_vertical|center_horizontal"
         android:text="Submit Feedback"
         android:textColor="#ffffffff"
