@@ -115,6 +115,9 @@ public class GPSTracker extends Service implements LocationListener {
      */
     public double getLatitude() {
         while (location == null) {
+            if (!canGetLocation()) {
+                showSettingsAlert();
+            }
             Lazy.dlog(LOGTAG, "Trying to get location");
             getLocation();
         }
@@ -128,6 +131,9 @@ public class GPSTracker extends Service implements LocationListener {
      */
     public double getLongitude() {
         while (location == null) {
+            if (!canGetLocation()) {
+                showSettingsAlert();
+            }
             Lazy.dlog(LOGTAG, "Trying to get location");
             getLocation();
         }
@@ -137,7 +143,7 @@ public class GPSTracker extends Service implements LocationListener {
     }
 
     /**
-     * Function to check GPS/wifi enabled
+     * Function to check GPS/wifi enabled. If we already have a location, returns true.
      *
      * @return boolean
      */

@@ -25,6 +25,8 @@ public class AsyncPlacesFetcher extends AsyncTask<GPSTracker, Integer, PlacesMan
 
         double lat = gps.getLatitude();
         double lon = gps.getLongitude();
+        Lazy.dlog(LOGTAG, "lat is: " + lat);
+        Lazy.dlog(LOGTAG, "lon is: " + lon);
         publishProgress(new Integer(50));
 
         PlacesFetcher.runFetchPlaces(lat, lon);

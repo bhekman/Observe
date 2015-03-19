@@ -12,9 +12,6 @@ import com.parse.ParseUser;
  * Created by bradleyhekman on 3/5/15.
  */
 public class MainActivity extends Activity {
-    // Parse credentials
-    public static final String PARSE_APPLICATION_ID = "QUNijmdTyw5nGWRcT3wG6eaj8LorK2r2phOpmSfe";
-    public static final String PARSE_CLIENT_KEY = "wq5pggohIdgsOUY9J5nv8S0QD50tucSXZCV1QwGJ";
     private static final String LOGTAG = "MainActivity";
     static boolean parseIsInitialized = false;
     ParseUser user = null;
@@ -28,7 +25,7 @@ public class MainActivity extends Activity {
         Lazy.dlog(LOGTAG, "enabling Parse datastore");
         if (!parseIsInitialized) {
             Parse.enableLocalDatastore(this);
-            Parse.initialize(this, PARSE_APPLICATION_ID, PARSE_CLIENT_KEY);
+            Parse.initialize(this, Keys.PARSE_APPLICATION_ID, Keys.PARSE_CLIENT_KEY);
             parseIsInitialized = true;
         }
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
