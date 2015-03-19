@@ -96,14 +96,17 @@ public class CreateFeedbackActivity extends Activity {
             PlacesManager placesManager;
             double latitude = 0;
             double longitude = 0;
+            String place_id = "";
             try {
                 Lazy.dlog(LOGTAG, "getting place");
                 placesManager = places_fetcher.get(5, TimeUnit.SECONDS);
                 latitude = PlacesFetcher.lat;
                 longitude = PlacesFetcher.lon;
+                place_id = placesManager.getTopPlace().getString("place_id");
             } catch (Exception e) {
                 Lazy.elog(LOGTAG, e);
                 Lazy.quickToast(this, "There was a problem fetching your location");
+                mFeedbackEditText.setText(submittedText);
                 return;
             }
 
@@ -113,7 +116,7 @@ public class CreateFeedbackActivity extends Activity {
             feedbackObj.put("creator", user);
             feedbackObj.put("latitude", latitude);
             feedbackObj.put("longitude", longitude);
-            feedbackObj.put("placeId", placesManager.getTopPlace().getString("place_id"));
+            feedbackObj.put("placeId", place_id);
 
             // Do save
             feedbackObj.saveInBackground(new SaveCallback() {
