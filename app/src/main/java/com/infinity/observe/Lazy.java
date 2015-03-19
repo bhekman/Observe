@@ -22,7 +22,15 @@ public class Lazy {
         Log.i(LOGTAG, msg);
     }
 
+    static void elog(String LOGTAG, String e) {
+        Log.e(LOGTAG, e);
+    }
+
     static void elog(String LOGTAG, ParseException e) {
+        Log.e(LOGTAG, e.toString());
+    }
+
+    static void elog(String LOGTAG, Exception e) {
         Log.e(LOGTAG, e.toString());
     }
 }
